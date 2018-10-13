@@ -21,6 +21,6 @@ button.click()
 
 time.sleep(1)
 table = driver.find_element_by_css_selector("#grdMain_body_tbody")
-print(table.text)
+print(table.text.replace("[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]", ""))
 
 
