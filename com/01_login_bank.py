@@ -1,10 +1,26 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
 
 driver = webdriver.Chrome("../chrome/mac/chromedriver")
 
-driver.get("http://www.kofiabond.or.kr/websquare/websquare.html?w2xPath=/xml/Com/Common_TabMnuDsp.xml&divisionId=MBIS01070010000000&serviceId=BIS0100100280&topMenuIndex=6&w2xHome=/xml/&w2xDocumentRoot=")
+driver.get("http://dis.kofia.or.kr/websquare/index.jsp?w2xPath=/wq/fundann/DISMainFlucFund.xml&divisionId=MDIS01006002000000&serviceId=SDIS01006002000")
+driver.implicitly_wait(10)
 
 table = driver.title
-
 print(table)
-print(driver.find_element_by_tag_name("div").text)
+driver.implicitly_wait(10)
+
+select = Select(driver.find_element_by_id('fundTyp_input_0'))
+
+print(select)
+
+# select by visible text
+select.select_by_visible_text('주식형')
+#
+# # select by value
+# select.select_by_value('1')
+
+# input = driver.find_element_by_class_name('w2inputCalendar_input w95 h17')
+# print(input)
+# login_button.click()
+
