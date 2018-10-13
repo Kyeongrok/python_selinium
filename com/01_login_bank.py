@@ -1,7 +1,7 @@
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
-
+from bs4 import BeautifulSoup
 import time
 
 
@@ -29,6 +29,7 @@ button = driver.find_element_by_css_selector("#btnSearImg")
 button.click()
 
 time.sleep(10)
-table = driver.find_element_by_css_selector("#grdMain")
+table = driver.find_element_by_css_selector("#grdMain_body_table")
 print(table.text)
+
 
