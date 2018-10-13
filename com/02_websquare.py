@@ -11,6 +11,11 @@ title = driver.title
 print(title)
 
 time.sleep(1)
+driver.find_element_by_css_selector("#srchDt_input").clear()
+input = driver.find_element_by_css_selector("#srchDt_input").send_keys("20181011")
+
+
+time.sleep(1)
 button = driver.find_element_by_css_selector("#image1")
 button.click()
 
