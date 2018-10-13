@@ -10,12 +10,12 @@ driver.get("http://www.kofiabond.or.kr/websquare/websquare.html?w2xPath=/xml/sta
 title = driver.title
 print(title)
 
-time.sleep(10)
+time.sleep(1)
 button = driver.find_element_by_css_selector("#image1")
 button.click()
 
-time.sleep(10)
-table = driver.find_element_by_css_selector("#grdMain_body_table")
+time.sleep(1)
+table = driver.find_element_by_css_selector("#grdMain_body_tbody")
 print(table.text)
 
 
