@@ -21,6 +21,21 @@ button.click()
 
 time.sleep(1)
 table = driver.find_element_by_css_selector("#grdMain_body_tbody")
-print(table.text.replace("[ㄱ-ㅎ|ㅏ-ㅣ|가-힣]", ""))
+
+text = table.text
+
+import xlwt
+
+book = xlwt.Workbook(encoding="utf-8")
+
+sheet1 = book.add_sheet("Sheet2")
+
+list = text.split("\n")
+
+for num in range(0, len(list)):
+    sheet1.write(num, 0, list[num])
+
+book.save("hello2.xls")
+
 
 
