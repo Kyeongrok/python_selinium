@@ -20,7 +20,7 @@ select.select_by_visible_text('주식형')
 # # select by value
 # select.select_by_value('1')
 
-# input = driver.find_element_by_class_name('w2inputCalendar_input w95 h17')
+button = driver.find_element_by_css_selector("#btnSearImg")
 # print(input)
-# login_button.click()
+button.click()
 
