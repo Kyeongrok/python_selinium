@@ -49,6 +49,7 @@ from xlrd import open_workbook
 book = xlwt.Workbook(encoding="utf-8")
 
 sheet1 = book.add_sheet("Sheet 1")
+book.add_sheet("Sheet 2")
 
 list = text.split("\n")
 print(list)
@@ -59,8 +60,11 @@ for num in range(1, len(list)):
 book.save("hello.xls")
 
 book2 = open_workbook("hello.xls")
-sheetname = book2.sheet_names()[0]
+sheetname = book2.sheet_names()[1]
+
+print(sheetname)
 sheet1_01 = book2.sheet_by_name("Sheet 1")
+print(sheet1_01.cell(0,0))
 
 
 
