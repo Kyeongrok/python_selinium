@@ -1,16 +1,10 @@
 from datetime import datetime
-
-import regex as regex
 from selenium import webdriver
-from selenium.webdriver.support.ui import Select
-from selenium.webdriver.support.ui import WebDriverWait
-from bs4 import BeautifulSoup
 import time
-from openpyxl import load_workbook, workbook
 import xlwt
 import re
 
-driver = webdriver.Chrome("C:/Users/정섭/git/python/python_selinium/chrome/window/chromedriver.exe")
+driver = webdriver.Chrome("../chrome/mac/chromedriver")
 driver.get("http://www.kofiabond.or.kr/websquare/websquare.html?w2xPath=/xml/startest/BISBndSrtPrcDay.xml&divisionId=MBIS01070010000000&divisionNm=%25EC%259D%25BC%25EC%259E%2590%25EB%25B3%2584&tabIdx=1&w2xHome=/xml/&w2xDocumentRoot=")
 
 title = driver.title
@@ -23,6 +17,10 @@ time.sleep(1)
 table = driver.find_element_by_css_selector("#grdMain_body_tbody")
 
 text = table.text
+
+file_name = "./save_line.txt"
+f1 = open(file_name, mode='w+')
+f1.write(str(text.encode('euc-kr')))
 
 regex = r'[가-힇]+'
 hangul = re.findall(regex, text)
@@ -52,7 +50,7 @@ list = replacedtext.split("\n")
 for num in range(0, len(list)):
     sheet1.write(num, 0, list[num])
 
-book.save("C:/Users/정섭/Desktop/Python_Kofiabond.xls")
+book.save("./Python_Kofiabond.xls")
 
 
 driver.close()
