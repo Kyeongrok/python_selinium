@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-randomValues = [[1, 2], [3, 4]]
+randomValues = [["2018-10-17", 2], [3, 4]]
 df1 = pd.DataFrame(randomValues)
 
 path = "pdxl.xlsx"
