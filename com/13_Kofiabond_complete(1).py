@@ -19,8 +19,8 @@ table = driver.find_element_by_css_selector("#grdMain_body_tbody")
 text = table.text
 
 file_name = "./save_line.txt"
-f1 = open(file_name, mode='w+')
-f1.write(str(text.encode('euc-kr')))
+f1 = open(file_name, mode='w+', encoding='utf-8')
+f1.write(str(text))
 
 regex = r'[가-힇]+'
 hangul = re.findall(regex, text)
