@@ -3,8 +3,9 @@ from selenium import webdriver
 import time
 import xlwt
 import re
+import com.sel_driver_location as loc
 
-driver = webdriver.Chrome("../chrome/mac/chromedriver")
+driver = webdriver.Chrome(loc.getChromeDriverLocation())
 driver.get("http://www.kofiabond.or.kr/websquare/websquare.html?w2xPath=/xml/startest/BISBndSrtPrcDay.xml&divisionId=MBIS01070010000000&divisionNm=%25EC%259D%25BC%25EC%259E%2590%25EB%25B3%2584&tabIdx=1&w2xHome=/xml/&w2xDocumentRoot=")
 
 title = driver.title
